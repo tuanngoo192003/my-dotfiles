@@ -18,4 +18,4 @@ vim.keymap.set("i", "NN", "<Esc>")
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 -- paste over highlight word
 vim.keymap.set("x", "<leader>p", '"_dP')
-vim.opt.colorcolumn = "94"
+vim.opt.colorcolumn = "120"
