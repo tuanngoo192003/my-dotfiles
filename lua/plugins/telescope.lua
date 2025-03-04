@@ -19,6 +19,7 @@ return {
 		config = function()
 			require("telescope").setup({
 				defaults = {
+                    winblend = 20, 
 					layout_config = {
 						horizontal = {
 							preview_width = 0.6,
@@ -29,6 +30,8 @@ return {
 							height = 0.85,
 						},
 					},
+                    sorting_strategy = "ascending",
+                    color_devicons = true,
 				},
 				extensions = {
 					["ui-select"] = {

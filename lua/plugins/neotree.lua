@@ -8,6 +8,11 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
+        require("neo-tree").setup({
+            filesystem = {
+                filtered_items = { hide_dotfiles = false, hide_gitignored = true },
+            },
+        })
 		-- key map for neo tree
 		vim.keymap.set("n", "<leader>v", ":Neotree filesystem reveal left<CR>", {})
 		vim.keymap.set("n", "<leader>xx", ":Neotree filesystem close <CR>", {})
