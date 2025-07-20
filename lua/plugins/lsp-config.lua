@@ -62,7 +62,18 @@ return {
                         staticcheck = true,
                     },
                 },
-            })
+                on_attach = function(client, bufnr)
+                        -- Open floating diagnostic window
+                        vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+
+                        -- You can also add go-to-definition, hover, etc. here
+                        vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+                        vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+
+                        -- Add code actions too if you want (like in your jdtls)
+                        vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
+                    end,
+             })
         end,
     },
 
